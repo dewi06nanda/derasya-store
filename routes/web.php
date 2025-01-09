@@ -19,3 +19,8 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'handleRegister']);
 
+Route::middleware('auth')->group(function () {
+    Route::get('/homepage', [HomepageController::class, 'index']);
+    Route::get('/product', [HomepageController::class, 'product']);
+    Route::get('/product/{barang}', [HomepageController::class, 'detailProduct']);
+});
