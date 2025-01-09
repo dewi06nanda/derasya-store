@@ -18,3 +18,4 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'handleRegister']);
+
